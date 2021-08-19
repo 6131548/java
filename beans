@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="helloWorld" class="com.example.java_study.net.HelloWorld" name="ripi,ripi2">
+        <property name="str" value="sss" />
+<!--            <constructor-arg index="0" value="sdsss" />-->
+<!--        <constructor-arg type="java.lang.String" value="sdsss" />-->
+        <constructor-arg name="str" value="hdjhd" />
+
+    </bean>
+    <bean id="helloT" class="com.example.java_study.net.HelloT">
+        <constructor-arg name="name" value="ttt" />
+    </bean>
+<import resource="Beans1.xml"/>
+</beans>
