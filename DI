@@ -5,3 +5,46 @@
 创建环境
  复杂类型
  真实环境
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="adress" class="com.example.java_study.net.Adress">
+        <property name="name" value="阆中" />
+    </bean>
+    <bean id="student" class="com.example.java_study.net.Student" >
+        <property name="name" value="学生" />
+        <property name="adress" ref="adress" />
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+            </array>
+        </property>
+        <property name="hoboys">
+            <list>
+                <value>嘻哈</value>
+                <value>嘻哈2</value>
+            </list>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="发卡" value="50快"></entry>
+                <entry key="游戏卡" value="60快"></entry>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>lol</value>
+                <value>coc</value>
+            </set>
+        </property>
+        <property name="wife" value="老婆"/>
+        <property name="info">
+            <props>
+                <prop key="key1">value1</prop>
+                <prop key="key1">value1</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
