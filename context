@@ -1,0 +1,31 @@
+##自动装配
+···xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+        <bean id="cat1" class="com.example.java_study.net.Cat" />
+        <bean id="dog2" class="com.example.java_study.net.Dog" />
+        <bean id="people" class="com.example.java_study.net.People" />
+        <context:annotation-config/>
+</beans>
+...
+
+
+
+    @Resource
+    private Cat cat;
+   @Resource
+    private Dog  dog;
+    
+    
+@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。
+
+@Autowired注解是按照类型（byType）装配依赖对象
+
+@Resource
+@Resource默认按照ByName自动注入，由J2EE提供，需要导入包javax.annotation.Resource
